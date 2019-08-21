@@ -40,8 +40,8 @@ namespace WebAPITest.App_Start
 
             //Repository
             builder.RegisterType<SupplierRepository>().As<ISupplierRepository>().InstancePerDependency(); //PerDependency
-
-            builder.RegisterType<MockDBContext>().SingleInstance(); //PerLifetimeScope
+            //builder.RegisterType<MockDBContext>().SingleInstance();
+            builder.RegisterType<MockDBContext>().InstancePerLifetimeScope();
 
 
             builder.RegisterType<ValidateTokenHandler>().As<DelegatingHandler>();
